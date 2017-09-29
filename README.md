@@ -1,6 +1,6 @@
 # docker-postgres-up-from-dump
 
-## build:
+## build examples:
 
     docker build --build-arg .
 
@@ -14,7 +14,7 @@
     docker build --build-arg DUMP_URI=https://edu.postgrespro.ru/demo_big.zip -t postgres-pro-big-demo-db .
 
 
-## run:
+## run examples:
 
     docker run -t -p 5432:5432 postgres-pro-small-demo-db
 
