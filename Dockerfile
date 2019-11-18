@@ -10,4 +10,7 @@ ARG DUMP_URI=https://edu.postgrespro.ru/demo_small.zip
 RUN wget --output-document=dbdump.zip $DUMP_URI
 RUN unzip dbdump.zip -d dbdump
 
-RUN echo "psql -U postgres -f /dbdump/demo_small.sql" > /docker-entrypoint-initdb.d/run_dbdump.sh
+
+RUN echo "" > /docker-entrypoint-initdb.d/run_dbdump.sh
+RUN echo "psql -t template1 -U postgres -c 'alter system set shared_preload_libraries=''pg_stat_statements'',''pg_buffercache'';'" >> /docker-entrypoint-initdb.d/run_dbdump.sh
+RUN echo "psql -U postgres -f /dbdump/demo_small.sql" >> /docker-entrypoint-initdb.d/run_dbdump.sh
