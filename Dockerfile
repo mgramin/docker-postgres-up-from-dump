@@ -1,4 +1,4 @@
-FROM postgres
+FROM postgres:12
 
 RUN mkdir -p /var/lib/postgresql-static/data
 ENV PGDATA /var/lib/postgresql-static/data
