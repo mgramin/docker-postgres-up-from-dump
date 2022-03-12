@@ -18,5 +18,5 @@ docker build --build-arg .
 ## Run it:
 
 ```
-docker run -d -e POSTGRES_PASSWORD=postgres -t -p 5432:5432 postgres-pro-small-demo-db -c "shared_preload_libraries=pg_stat_statements"
+docker run -d --name pg_demo_db -e POSTGRES_PASSWORD=postgres -t -p 5432:5432 postgres-pro-small-demo-db
 ```
