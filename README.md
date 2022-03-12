@@ -1,5 +1,6 @@
 # docker-postgres-up-from-dump
 
+Postgres image with dump data.
 
 ## Build it:
 
