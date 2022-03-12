@@ -16,12 +16,6 @@
 
 ## run examples:
 
-    docker run -t -p 5432:5432 postgres-pro-small-demo-db
-
-
-    docker run -t -p 5432:5432 postgres-pro-medium-demo-db
-
-
-    docker run -t -p 5432:5432 postgres-pro-big-demo-db
-
-
+```
+docker run -d -e POSTGRES_PASSWORD=postgres -t -p 5432:5432 postgres-pro-small-demo-db -c "shared_preload_libraries=pg_stat_statements"
+```
